@@ -21,7 +21,7 @@ router.post('/register', validatorHandler(createUserSchema, 'body'),
 );
 
 router.post('/login', validatorHandler(loginUserSchema, 'body'),  (req, res) => {
-  const {password,  name} = req.body;
+  const {password, email} = req.body;
   const login = service.login(email, password)
   if(login !== undefined){
     res.send('Welcome to MangoChango Academy')
